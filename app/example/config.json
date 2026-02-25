@@ -1,0 +1,7 @@
+{
+  "app": "example",
+  "subscriptions": ["00000000-0000-0000-0000-000000000001"],
+  "seedResourceGroups": ["rg-example"],
+  "outputDir": "app/example/out",
+  "includeRbac": false
+}

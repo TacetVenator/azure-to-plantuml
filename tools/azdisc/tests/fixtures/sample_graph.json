@@ -1,0 +1,90 @@
+{
+  "nodes": [
+    {
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.compute/disks/disk-os",
+      "name": "disk-os",
+      "type": "microsoft.compute/disks",
+      "location": "eastus",
+      "resourceGroup": "rg-test",
+      "subscriptionId": "00000000-0000-0000-0000-000000000001",
+      "isExternal": false
+    },
+    {
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.compute/virtualmachines/vm-test",
+      "name": "vm-test",
+      "type": "microsoft.compute/virtualmachines",
+      "location": "eastus",
+      "resourceGroup": "rg-test",
+      "subscriptionId": "00000000-0000-0000-0000-000000000001",
+      "isExternal": false
+    },
+    {
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.network/networkinterfaces/nic-test",
+      "name": "nic-test",
+      "type": "microsoft.network/networkinterfaces",
+      "location": "eastus",
+      "resourceGroup": "rg-test",
+      "subscriptionId": "00000000-0000-0000-0000-000000000001",
+      "isExternal": false
+    },
+    {
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.network/networksecuritygroups/nsg-test",
+      "name": "nsg-test",
+      "type": "microsoft.network/networksecuritygroups",
+      "location": "eastus",
+      "resourceGroup": "rg-test",
+      "subscriptionId": "00000000-0000-0000-0000-000000000001",
+      "isExternal": false
+    },
+    {
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.network/virtualnetworks/vnet-test",
+      "name": "vnet-test",
+      "type": "microsoft.network/virtualnetworks",
+      "location": "eastus",
+      "resourceGroup": "rg-test",
+      "subscriptionId": "00000000-0000-0000-0000-000000000001",
+      "isExternal": false
+    },
+    {
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.network/virtualnetworks/vnet-test/subnets/subnet-default",
+      "name": "subnet-default",
+      "type": "microsoft.network/virtualnetworks/subnets",
+      "location": "eastus",
+      "resourceGroup": "rg-test",
+      "subscriptionId": "00000000-0000-0000-0000-000000000001",
+      "isExternal": false
+    }
+  ],
+  "edges": [
+    {
+      "src": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.compute/virtualmachines/vm-test",
+      "dst": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.compute/disks/disk-os",
+      "kind": "dependency"
+    },
+    {
+      "src": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.compute/virtualmachines/vm-test",
+      "dst": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.network/networkinterfaces/nic-test",
+      "kind": "dependency"
+    },
+    {
+      "src": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.network/networkinterfaces/nic-test",
+      "dst": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.network/networksecuritygroups/nsg-test",
+      "kind": "dependency"
+    },
+    {
+      "src": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.network/networkinterfaces/nic-test",
+      "dst": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.network/virtualnetworks/vnet-test/subnets/subnet-default",
+      "kind": "dependency"
+    },
+    {
+      "src": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.network/virtualnetworks/vnet-test/subnets/subnet-default",
+      "dst": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.network/networksecuritygroups/nsg-test",
+      "kind": "dependency"
+    },
+    {
+      "src": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.network/virtualnetworks/vnet-test/subnets/subnet-default",
+      "dst": "/subscriptions/00000000-0000-0000-0000-000000000001/resourcegroups/rg-test/providers/microsoft.network/virtualnetworks/vnet-test",
+      "kind": "dependency"
+    }
+  ]
+}
