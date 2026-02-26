@@ -1,0 +1,99 @@
+[
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-test/providers/Microsoft.Compute/virtualMachines/vm-test",
+    "name": "vm-test",
+    "type": "microsoft.compute/virtualmachines",
+    "location": "eastus",
+    "subscriptionId": "00000000-0000-0000-0000-000000000001",
+    "resourceGroup": "rg-test",
+    "properties": {
+      "networkProfile": {
+        "networkInterfaces": [
+          {
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-test/providers/Microsoft.Network/networkInterfaces/nic-test"
+          }
+        ]
+      },
+      "storageProfile": {
+        "osDisk": {
+          "managedDisk": {
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-test/providers/Microsoft.Compute/disks/disk-os"
+          }
+        },
+        "dataDisks": []
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-test/providers/Microsoft.Network/networkInterfaces/nic-test",
+    "name": "nic-test",
+    "type": "microsoft.network/networkinterfaces",
+    "location": "eastus",
+    "subscriptionId": "00000000-0000-0000-0000-000000000001",
+    "resourceGroup": "rg-test",
+    "properties": {
+      "ipConfigurations": [
+        {
+          "name": "ipconfig1",
+          "properties": {
+            "subnet": {
+              "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-test/providers/Microsoft.Network/virtualNetworks/vnet-test/subnets/subnet-default"
+            }
+          }
+        }
+      ],
+      "networkSecurityGroup": {
+        "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-test/providers/Microsoft.Network/networkSecurityGroups/nsg-test"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-test/providers/Microsoft.Network/virtualNetworks/vnet-test",
+    "name": "vnet-test",
+    "type": "microsoft.network/virtualnetworks",
+    "location": "eastus",
+    "subscriptionId": "00000000-0000-0000-0000-000000000001",
+    "resourceGroup": "rg-test",
+    "properties": {
+      "addressSpace": {
+        "addressPrefixes": ["10.0.0.0/16"]
+      },
+      "subnets": [
+        {
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-test/providers/Microsoft.Network/virtualNetworks/vnet-test/subnets/subnet-default",
+          "name": "subnet-default",
+          "properties": {
+            "addressPrefix": "10.0.1.0/24",
+            "networkSecurityGroup": {
+              "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-test/providers/Microsoft.Network/networkSecurityGroups/nsg-test"
+            }
+          }
+        }
+      ],
+      "virtualNetworkPeerings": []
+    }
+  },
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-test/providers/Microsoft.Network/networkSecurityGroups/nsg-test",
+    "name": "nsg-test",
+    "type": "microsoft.network/networksecuritygroups",
+    "location": "eastus",
+    "subscriptionId": "00000000-0000-0000-0000-000000000001",
+    "resourceGroup": "rg-test",
+    "properties": {
+      "securityRules": []
+    }
+  },
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-test/providers/Microsoft.Compute/disks/disk-os",
+    "name": "disk-os",
+    "type": "microsoft.compute/disks",
+    "location": "eastus",
+    "subscriptionId": "00000000-0000-0000-0000-000000000001",
+    "resourceGroup": "rg-test",
+    "properties": {
+      "diskSizeGB": 128,
+      "osType": "Windows"
+    }
+  }
+]
